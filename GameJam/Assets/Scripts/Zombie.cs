@@ -26,6 +26,7 @@ class Zombie : EnemyMovement
         if (collision.gameObject.tag == "Player" && !isAttacking)
         {
             isAttacking = true;
+            collision.gameObject.GetComponent<CharacterStats>().TakeDamage(characterStats.damage.GetValue());
             StartCoroutine(HitPlayer(collision.gameObject));
             // HitPlayer(collision.gameObject);
         }

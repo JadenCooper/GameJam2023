@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -21,9 +22,13 @@ public class CharacterStats : MonoBehaviour
     public Stat reloadSpeed;
     public Stat bulletWeight;
 
+    public UnityEvent<float> ChangeHealth, SetHealth;
+
     private void Awake()
     {
         currentHealth = maxHealth;
+        SetHealth?.Invoke(currentHealth);
+        ChangeHealth?.Invoke(currentHealth);
     }
 
     private void Start()
@@ -58,6 +63,7 @@ public class CharacterStats : MonoBehaviour
         damage = damage - defence.GetValue();
         damage = Mathf.Clamp(damage, 1, int.MaxValue);
         currentHealth -= damage;
+        ChangeHealth?.Invoke(currentHealth);
         Debug.Log(transform.name + " takes " + damage + " damage");
 
         if (currentHealth <= 0)
@@ -69,5 +75,6 @@ public class CharacterStats : MonoBehaviour
     public virtual void Die()
     {
         Debug.Log(transform.name + " has died");
+        Destroy(gameObject);
     }
 }
