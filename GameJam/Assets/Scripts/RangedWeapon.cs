@@ -7,7 +7,7 @@ public class RangedWeapon : MonoBehaviour
 {
     public Transform barrel;
     public bool isReloading = false;
-    private int currentClip;
+    public int currentClip;
     public bool IsAttacking { get; set; }
     public bool attackBlock;
     public Vector2 direction;
