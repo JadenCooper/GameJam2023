@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float speed = 1.0f;
     public float bounceBack = 1f;
-
+    public CharacterStats characterStats;
     // Start is called before the first frame update
     public void Start()
     {
