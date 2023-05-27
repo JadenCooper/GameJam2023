@@ -8,13 +8,22 @@ public class Coffin : MonoBehaviour
     private float BreakOutTime = 5f;
     public GameObject EnemyToSpawn;
     public Transform SpawnLocation;
-    void Start()
+    public EnemyLOS playerDetector;
+    private bool seenPlayer;
+    private void Update()
     {
-        StartCoroutine(BreakoutTimer());
+        if (!seenPlayer)
+        {
+            if (playerDetector.CheckForPlayer())
+            {
+                seenPlayer = true;
+                StartCoroutine(BreakoutTimer(Random.Range(1, BreakOutTime)));
+            }
+        }
     }
-    public IEnumerator BreakoutTimer()
+    public IEnumerator BreakoutTimer(float timer)
     {
-        yield return new WaitForSeconds(BreakOutTime);
+        yield return new WaitForSeconds(timer);
         gameObject.GetComponent<SpriteRenderer>().sprite = brokenSprite;
         Instantiate(EnemyToSpawn, SpawnLocation);
     }

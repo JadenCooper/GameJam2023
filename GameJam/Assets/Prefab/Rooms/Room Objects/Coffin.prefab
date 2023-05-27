@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7268334884887594932}
   - component: {fileID: 7268334884887594933}
   - component: {fileID: 7268334884887594930}
+  - component: {fileID: 9166575029946311275}
   m_Layer: 0
   m_Name: Coffin
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   brokenSprite: {fileID: 1654689377, guid: e49760b2128b65047b8960b9e0a9a9fb, type: 3}
   EnemyToSpawn: {fileID: 3435715496364184206, guid: bed5b01641632104999ff332155b0bc5, type: 3}
   SpawnLocation: {fileID: 7268334885515237214}
+  playerDetector: {fileID: 9166575029946311275}
+--- !u!114 &9166575029946311275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268334884887594931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a756f79508dce1e448232bcdd4c8820b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dectectionRange: 5.5
 --- !u!1 &7268334885515237215
 GameObject:
   m_ObjectHideFlags: 0
