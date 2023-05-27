@@ -44,6 +44,8 @@ public class RoomManager : MonoBehaviour
                 i = 0;
             }
         }while(spawnedAmmount > 0);
+
+        player.transform.position = roomData.PlayerSpawnLocation.transform.position;
     }
 
     public void RandomizeRoom()
