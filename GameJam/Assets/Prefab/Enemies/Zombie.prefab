@@ -213,6 +213,8 @@ MonoBehaviour:
   speed: 3
   bounceBack: 1
   characterStats: {fileID: 2562078983493523180}
+  playerDetector: {fileID: 7439163493740433192}
+  canSeePlayer: 0
   attackDelay: 1
   isAttacking: 0
 --- !u!114 &2562078983493523180
@@ -313,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a756f79508dce1e448232bcdd4c8820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dectectionRange: 6
 --- !u!1 &4157562260139341570
 GameObject:
   m_ObjectHideFlags: 0

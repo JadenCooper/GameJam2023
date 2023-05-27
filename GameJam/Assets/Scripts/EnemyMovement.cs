@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 1.0f;
     public float bounceBack = 1f;
     public CharacterStats characterStats;
-
+    public EnemyLOS playerDetector;
     public bool canSeePlayer;
     // Start is called before the first frame update
     public void Start()
@@ -22,9 +22,16 @@ public class EnemyMovement : MonoBehaviour
 
     public void Update()
     {
-        if (canSeePlayer) 
-        { 
-            
+        if (!canSeePlayer)
+        {
+            if (playerDetector.CheckForPlayer())
+            {
+                canSeePlayer = true;
+                MoveEnemy(gameObject);
+            }
+        }
+        else
+        {
             MoveEnemy(gameObject);
         }
     }
