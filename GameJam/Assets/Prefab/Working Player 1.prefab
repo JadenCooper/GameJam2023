@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 6354257590376329257}
   isReloading: 0
+  currentClip: 0
   attackBlock: 0
   direction: {x: 0, y: 0}
   rangedStats: {fileID: 11400000, guid: 03ef1d4343888ef40a44575cedd256b7, type: 2}
@@ -200,6 +201,7 @@ GameObject:
   - component: {fileID: 6354257591413341667}
   - component: {fileID: 6354257591413341666}
   - component: {fileID: 6354257591413341665}
+  - component: {fileID: 3619419520235292928}
   m_Layer: 6
   m_Name: Working Player 1
   m_TagString: Player
@@ -263,7 +265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -865619254, guid: 0a7eea83b55fc804f83caab7b290d751, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -489,3 +491,23 @@ MonoBehaviour:
     baseValue: 0
   bulletWeight:
     baseValue: 0
+  ChangeHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  SetHealth:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3619419520235292928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354257591413341658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a297400c9542747a52126228ec2de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  playerStats: {fileID: 0}

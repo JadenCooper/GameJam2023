@@ -33,7 +33,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
-        foreach (Item item in ItemManager.Instance.items)
+        foreach (Item item in ItemManager.instance.items)
         {
             damage.AddModifier(item.damageModifier);
             speed.AddModifier(item.speedModifier);

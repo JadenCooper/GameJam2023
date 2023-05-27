@@ -5,11 +5,21 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     #region Singleton
-    public static ItemManager Instance;
+    public static ItemManager instance {
+        get 
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<ItemManager>();
+            }
+            return _instance;
+        }
+    }
+    static ItemManager _instance;
 
     private void Awake()
     {
-        Instance = this; 
+        _instance = this; 
     }
     #endregion
 
@@ -17,8 +27,8 @@ public class ItemManager : MonoBehaviour
     public PlayerStats playerStats;
 
     public void AddItem(Item newItem)
-    {
+    { 
         items.Add(newItem);
-        playerStats.ItemChanged(newItem, null);
+        playerStats.ItemChanged(newItem);
     }
 }
