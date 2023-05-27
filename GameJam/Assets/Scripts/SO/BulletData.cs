@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletData : ScriptableObject
 {
     public Vector2 Direction;
-    public int damage = 1;
+    public float damage = 1;
     public float Speed = 20;
     public float MaxDistance = 10;
 }

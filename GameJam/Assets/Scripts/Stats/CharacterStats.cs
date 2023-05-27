@@ -5,11 +5,21 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth { get; private set; }
+    public float maxHealth = 100;
+    public float currentHealth { get; private set; }
 
     public Stat damage;
     public Stat speed;
+    public Stat defence;
+    public Stat health;
+    public Stat weight;
+
+    public Stat magSize;
+    public Stat spread;
+    public Stat bulletSpeed;
+    public Stat fireRate;
+    public Stat reloadSpeed;
+    public Stat bulletWeight;
 
     private void Awake()
     {
@@ -22,6 +32,15 @@ public class CharacterStats : MonoBehaviour
         {
             damage.AddModifier(item.damageModifier);
             speed.AddModifier(item.speedModifier);
+            defence.AddModifier(item.defenceModifier);
+            health.AddModifier(item.healthModifier);
+            weight.AddModifier(item.weightModifier);
+            magSize.AddModifier(item.magSizeModifier);
+            spread.AddModifier(item.spreadModifier);
+            bulletSpeed.AddModifier(item.bulletSpeedModifier);
+            fireRate.AddModifier(item.fireRateModifier);
+            reloadSpeed.AddModifier(item.reloadSpeedModifier);
+            bulletWeight.AddModifier(item.bulletWeightModifier);
         }
     }
 
@@ -33,9 +52,11 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);
+
+        damage = damage - defence.GetValue();
+        damage = Mathf.Clamp(damage, 1, int.MaxValue);
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage");
 
