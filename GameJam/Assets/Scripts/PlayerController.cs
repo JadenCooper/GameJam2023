@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
     public float currentSpeed;
     public float Acceleration;
     public float MaxSpeed;
+    private Animator animator;
+    public bool isMoving;
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void Move(Vector2 movementVector)
@@ -29,29 +32,31 @@ public class PlayerController : MonoBehaviour
         if (MathF.Abs(movementVector.y) == 0 && MathF.Abs(movementVector.x) == 0)
         {
             currentSpeed += -Acceleration * Time.deltaTime;
+            isMoving = false;
         }
         else
         {
             currentSpeed += Acceleration * Time.deltaTime;
+            isMoving = true;
+            CheckSide();
         }
         currentSpeed = Mathf.Clamp(currentSpeed, 0, MaxSpeed);
     }
 
-    //private void CheckSide()
-    //{
-    //    if (movementVector.x < 0)
-    //    {
-    //        //gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-    //        gameObject.GetComponent<SpriteRenderer>().flipX = true;
-    //    }
-    //    else
-    //    {
-    //        //gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-    //        gameObject.GetComponent<SpriteRenderer>().flipX = false;
-    //    }
-    //}
+    private void CheckSide()
+    {
+        if (movementVector.x < 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
     private void FixedUpdate()
     {
         rb2d.velocity = movement * Time.deltaTime;
+        animator.SetBool("isMoving", isMoving);
     }
 }
