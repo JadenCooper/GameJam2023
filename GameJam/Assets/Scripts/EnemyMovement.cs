@@ -27,6 +27,20 @@ public class EnemyMovement : MonoBehaviour
         float step = speed * Time.deltaTime; // calculate distance to move
         // enemy.transform.LookAt(player.transform);
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, step);
+        CheckSide(enemy);
+    }
+
+    private void CheckSide(GameObject enemy)
+    {
+        Vector2 movementVector = (player.transform.position - enemy.transform.position).normalized;
+        if (movementVector.x < 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     public void KnockBack(GameObject enemy)
