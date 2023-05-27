@@ -10,16 +10,22 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 1.0f;
     public float bounceBack = 1f;
     public CharacterStats characterStats;
+
+    public bool canSeePlayer;
     // Start is called before the first frame update
     public void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
- 
+        canSeePlayer = false;
     }
 
     public void Update()
     {
-        MoveEnemy(gameObject);
+        if (canSeePlayer) 
+        { 
+            
+            MoveEnemy(gameObject);
+        }
     }
 
     public void MoveEnemy(GameObject enemy)
