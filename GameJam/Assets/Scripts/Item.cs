@@ -22,8 +22,8 @@ public class Item : ScriptableObject
     public float bulletWeightModifier;
 
     // Start is called before the first frame update
-    public void OnPickup()
+    public void PickUp()
     {
-        ItemManager.Instance.AddItem(this);
+        ItemManager.instance.AddItem(this);
     }
 }
