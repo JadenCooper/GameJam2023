@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 8657879899133406155}
   isReloading: 0
+  currentClip: 0
   attackBlock: 0
   direction: {x: 0, y: 0}
   rangedStats: {fileID: 11400000, guid: 03ef1d4343888ef40a44575cedd256b7, type: 2}
@@ -420,7 +421,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.028148174, y: -0.145329}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -431,7 +432,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 15.623549, y: 20.962097}
   m_EdgeRadius: 0
 --- !u!95 &8657879900107564544
 Animator:
