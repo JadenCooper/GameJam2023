@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-    private GameObject player;
+    public GameObject player;
 
     public float speed = 1.0f;
     public float bounceBack = 1f;
@@ -14,8 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        Debug.Log(rb2D);
-        player = GameObject.Find("Player");
+ 
     }
 
     public void Update()

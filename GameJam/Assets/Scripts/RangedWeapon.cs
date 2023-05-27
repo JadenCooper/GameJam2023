@@ -16,6 +16,11 @@ public class RangedWeapon : MonoBehaviour
     {
         currentClip = rangedStats.MaxAmmo;
     }
+
+    public void SetStats(CharacterStats stats)
+    {
+        rangedStats.bulletData.damage = stats.damage.GetValue();
+    }
     public void Attack()
     {
         if (attackBlock || isReloading)

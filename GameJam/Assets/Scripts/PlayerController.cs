@@ -13,10 +13,18 @@ public class PlayerController : MonoBehaviour
     public float MaxSpeed;
     private Animator animator;
     public bool isMoving;
+    private PlayerStats playerStats;
+    private RangedWeapon RangedWeapon;
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerStats = GetComponent<PlayerStats>();
+        RangedWeapon = GetComponentInChildren<RangedWeapon>();
+    }
+    private void Start()
+    {
+        RangedWeapon.SetStats(playerStats);
     }
 
     public void Move(Vector2 movementVector)
@@ -40,7 +48,7 @@ public class PlayerController : MonoBehaviour
             isMoving = true;
             CheckSide();
         }
-        currentSpeed = Mathf.Clamp(currentSpeed, 0, MaxSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, playerStats.speed.GetValue());
     }
 
     private void CheckSide()

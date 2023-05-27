@@ -27,7 +27,6 @@ public class CharacterStats : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(damage.GetValue());
         if (Input.GetKeyDown("t"))
         {
             TakeDamage(damage.GetValue());
