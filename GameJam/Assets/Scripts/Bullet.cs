@@ -8,22 +8,28 @@ public class Bullet : MonoBehaviour
     private float conquaredDistance = 0;
     private Rigidbody2D rb2d;
     public BulletData bulletData;
+    public float damage;
+    //public float Speed;
+    public float MaxDistance;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
     }
-    public void Initialize(BulletData newBulletData, Vector2 direction)
+    public void Initialize(BulletData newBulletData, float newDamage, float Speed, float newMaxDistance, Vector2 direction)
     {
         bulletData.Direction = direction;
         bulletData = newBulletData;
         startPostion = transform.position;
-        rb2d.velocity = bulletData.Direction * bulletData.Speed;
+        rb2d.velocity = bulletData.Direction * Speed;
+        damage = newDamage;
+        MaxDistance = newMaxDistance;
     }
     private void Update()
     {
         conquaredDistance = Vector2.Distance(transform.position, startPostion);
-        if (conquaredDistance > bulletData.MaxDistance)
+        if (conquaredDistance > MaxDistance)
         {
             Destroy(gameObject);
         }
@@ -39,7 +45,7 @@ public class Bullet : MonoBehaviour
         CharacterStats stats = hit.GetComponent<CharacterStats>();
         if (stats != null)
         {
-            stats.TakeDamage(bulletData.damage);
+            stats.TakeDamage(damage);
         }
         Destroy(gameObject);
     }

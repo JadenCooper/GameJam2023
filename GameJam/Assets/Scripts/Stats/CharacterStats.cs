@@ -1,18 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterStats : MonoBehaviour
 {
     public float maxHealth = 100;
-    public float currentHealth { get; private set; }
+    public float currentHealth;
 
     public Stat damage;
     public Stat speed;
     public Stat defence;
-    public Stat health;
     public Stat weight;
 
     public Stat magSize;
@@ -21,6 +21,7 @@ public class CharacterStats : MonoBehaviour
     public Stat fireRate;
     public Stat reloadSpeed;
     public Stat bulletWeight;
+    public Stat range;
 
     public UnityEvent<float> ChangeHealth, SetHealth;
 
@@ -31,14 +32,19 @@ public class CharacterStats : MonoBehaviour
         ChangeHealth?.Invoke(currentHealth);
     }
 
-    private void Start()
+    public void Start()
     {
         foreach (Item item in ItemManager.instance.items)
         {
             damage.AddModifier(item.damageModifier);
             speed.AddModifier(item.speedModifier);
             defence.AddModifier(item.defenceModifier);
-            health.AddModifier(item.healthModifier);
+            if (item.healthModifier > 0)
+            {
+                maxHealth += item.healthModifier;
+                currentHealth += item.healthModifier;
+                ChangeHealth?.Invoke(currentHealth);
+            }
             weight.AddModifier(item.weightModifier);
             magSize.AddModifier(item.magSizeModifier);
             spread.AddModifier(item.spreadModifier);
@@ -46,6 +52,7 @@ public class CharacterStats : MonoBehaviour
             fireRate.AddModifier(item.fireRateModifier);
             reloadSpeed.AddModifier(item.reloadSpeedModifier);
             bulletWeight.AddModifier(item.bulletWeightModifier);
+            range.AddModifier(item.rangeModifier);
         }
     }
 

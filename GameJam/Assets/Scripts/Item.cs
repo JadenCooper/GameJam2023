@@ -20,6 +20,7 @@ public class Item : ScriptableObject
     public float fireRateModifier;
     public float reloadSpeedModifier;
     public float bulletWeightModifier;
+    public float rangeModifier;
 
     // Start is called before the first frame update
     public void PickUp()

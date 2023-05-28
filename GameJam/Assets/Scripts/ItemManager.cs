@@ -30,5 +30,6 @@ public class ItemManager : MonoBehaviour
     { 
         items.Add(newItem);
         playerStats.ItemChanged(newItem);
+        
     }
 }

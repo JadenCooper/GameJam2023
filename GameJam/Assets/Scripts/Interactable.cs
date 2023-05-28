@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
 {
     public float radius = 3.0f;
 
-    private void Awake()
+    public void Awake()
     {
         Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
         CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();

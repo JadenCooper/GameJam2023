@@ -66,5 +66,6 @@ public class PlayerController : MonoBehaviour
     {
         rb2d.velocity = movement * Time.deltaTime;
         animator.SetBool("isMoving", isMoving);
+        RangedWeapon.SetStats(playerStats);
     }
 }
