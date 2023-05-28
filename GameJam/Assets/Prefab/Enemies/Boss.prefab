@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395786486549111832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7527, y: -0.1132, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6107876, y: 1.522371, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_Size: {x: 2.4, y: 2.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &395786486549111837
@@ -174,14 +174,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 250
+  currentHealth: 0
   damage:
     baseValue: 25
   speed:
     baseValue: 0
   defence:
     baseValue: 15
-  health:
-    baseValue: 0
   weight:
     baseValue: 0
   magSize:
@@ -195,6 +194,8 @@ MonoBehaviour:
   reloadSpeed:
     baseValue: 0
   bulletWeight:
+    baseValue: 0
+  range:
     baseValue: 0
   ChangeHealth:
     m_PersistentCalls:
@@ -218,6 +219,7 @@ MonoBehaviour:
   speed: 100
   bounceBack: 0
   characterStats: {fileID: 0}
+  playerDetector: {fileID: 0}
   canSeePlayer: 0
   spawnPoints: []
   spawnTime: 0
