@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     public void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        characterStats = gameObject.GetComponent<CharacterStats>();
         player = GameObject.FindWithTag("Player");
         canSeePlayer = false;
     }

@@ -9,7 +9,7 @@ public class EnemyLOS : MonoBehaviour
 
     private List<Collider2D> targets = new List<Collider2D>();
 
-    private float dectectionRange = 6f;
+    public float dectectionRange = 6f;
     private LayerMask playerMask;
 
     private void Awake()
