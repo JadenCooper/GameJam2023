@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
         CheckSide(enemy);
     }
 
-    private void CheckSide(GameObject enemy)
+    public void CheckSide(GameObject enemy)
     {
         Vector2 movementVector = (player.transform.position - enemy.transform.position).normalized;
         if (movementVector.x < 0)

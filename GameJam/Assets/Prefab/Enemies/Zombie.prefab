@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7584353373987349338}
   - component: {fileID: 4557047736834339787}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 2562078983493523180}
   - component: {fileID: 2562078983493523182}
   - component: {fileID: 7439163493740433192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 4389076785255816202}
   - component: {fileID: 7756772990842039387}
   - component: {fileID: 7339981647972759980}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthFillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 6980175847416323360}
   - component: {fileID: 8780827043636881081}
   - component: {fileID: 4969918899051596208}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 1863041393586488818}
   - component: {fileID: 5567351527838207167}
   - component: {fileID: 5866768004648633690}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
