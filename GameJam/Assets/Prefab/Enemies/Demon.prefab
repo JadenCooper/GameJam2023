@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3384936034540007644}
   - component: {fileID: 3384936034540007616}
   - component: {fileID: 3384936034540007617}
+  - component: {fileID: 3926199070323803461}
+  - component: {fileID: -1354033775709375316}
   m_Layer: 7
   m_Name: Demon
   m_TagString: Untagged
@@ -150,6 +152,14 @@ MonoBehaviour:
   CanAttack: 0
   FireBall: {fileID: 3514368902704956732, guid: 25b9a4ec5f948d745a6815ae7befe7d9, type: 3}
   Mouth: {fileID: 3384936035787605027}
+  FireballSource: {fileID: 3926199070323803461}
+  BarkSource: {fileID: -1354033775709375316}
+  FireBallClip: {fileID: 8300000, guid: b19c0fc4d69ebb44e9579d75d15fad3a, type: 3}
+  DemonBarks:
+  - {fileID: 8300000, guid: 168bacca25c20844e9df3bbdf1f42ef0, type: 3}
+  - {fileID: 8300000, guid: c603e2ac4f0b49845b42ec80c354bf74, type: 3}
+  - {fileID: 8300000, guid: 6310a4db3f415244896c91c4fef74ffc, type: 3}
+  - {fileID: 8300000, guid: 19fba976ef0e63846b627c8a4e210887, type: 3}
 --- !u!114 &3384936034540007644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,14 +173,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  currentHealth: 0
   damage:
     baseValue: 15
   speed:
     baseValue: 35
   defence:
     baseValue: 5
-  health:
-    baseValue: 20
   weight:
     baseValue: 10
   magSize:
@@ -178,13 +187,15 @@ MonoBehaviour:
   spread:
     baseValue: 0
   bulletSpeed:
-    baseValue: 0
+    baseValue: 15
   fireRate:
-    baseValue: 0.4
+    baseValue: 0.6
   reloadSpeed:
     baseValue: 0
   bulletWeight:
     baseValue: 0
+  range:
+    baseValue: 5
   ChangeHealth:
     m_PersistentCalls:
       m_Calls:
@@ -262,6 +273,198 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.24}
   m_EdgeRadius: 0
+--- !u!82 &3926199070323803461
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384936034540007640}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b19c0fc4d69ebb44e9579d75d15fad3a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.397
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.747
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &-1354033775709375316
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384936034540007640}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.434
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3384936035787605024
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -13,6 +14,17 @@ public class Demon : EnemyMovement
     private bool FireLock = false;
     public GameObject FireBall;
     public Transform Mouth;
+    public AudioSource FireballSource;
+    public AudioSource BarkSource;
+    public AudioClip FireBallClip;
+    public List<AudioClip> DemonBarks = new List<AudioClip>();
+
+    private void Start()
+    {
+        base.Start();
+        BarkSource.clip = DemonBarks[Random.Range(0, DemonBarks.Count)];
+        StartCoroutine(BarkTimer());
+    }
     public void Update()
     {
         if (!canSeePlayer)
@@ -83,12 +95,10 @@ public class Demon : EnemyMovement
         newFireBall.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         Vector2 Firedirection = (player.transform.position - transform.position).normalized;
-        BulletData newBullet = new BulletData();
-        newBullet.Direction= Firedirection;
-        newBullet.Speed = 10f;
-        newBullet.MaxDistance = 10f;
-        newBullet.damage = characterStats.damage.GetValue();
-        newFireBall.GetComponent<Bullet>().Initialize(newBullet, Firedirection);
+
+        newFireBall.GetComponent<Bullet>().Initialize(characterStats.damage.GetValue(), characterStats.bulletSpeed.GetValue(), characterStats.range.GetValue(), Firedirection);
+        FireballSource.clip = FireBallClip;
+        FireballSource.Play();
         StartCoroutine(ShootLocker());
     }
 
@@ -97,5 +107,12 @@ public class Demon : EnemyMovement
         FireLock = true;
         yield return new WaitForSeconds(characterStats.fireRate.GetValue());
         FireLock = false;
+    }
+    private IEnumerator BarkTimer()
+    {
+        BarkSource.Play();
+        yield return new WaitForSeconds(Random.Range(4, 15));
+        BarkSource.clip = DemonBarks[Random.Range(0, DemonBarks.Count)];
+        StartCoroutine(BarkTimer());
     }
 }

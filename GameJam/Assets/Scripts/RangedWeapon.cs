@@ -13,6 +13,7 @@ public class RangedWeapon : MonoBehaviour
     public Vector2 direction;
     public RangedStats rangedStats;
     private CharacterStats playerStats;
+    public AudioSource audioSource;
     private void Start()
     {
         playerStats = gameObject.GetComponentInParent<PlayerStats>();
@@ -37,11 +38,12 @@ public class RangedWeapon : MonoBehaviour
     }
     public void Shoot()
     {
+        audioSource.Play();
         GameObject newBullet = Instantiate(rangedStats.Bullet, barrel.position, barrel.rotation);
         newBullet.transform.position = barrel.position;
         newBullet.transform.rotation = barrel.rotation;
         newBullet.layer = gameObject.layer;
-        newBullet.GetComponent<Bullet>().Initialize(rangedStats.bulletData, playerStats.damage.GetValue(), playerStats.bulletSpeed.GetValue(), playerStats.range.GetValue(), direction);
+        newBullet.GetComponent<Bullet>().Initialize(playerStats.damage.GetValue(), playerStats.bulletSpeed.GetValue(), playerStats.range.GetValue(), direction);
         currentClip--;
         if (currentClip <= 0)
         {
