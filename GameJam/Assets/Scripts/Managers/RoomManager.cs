@@ -38,7 +38,7 @@ public class RoomManager : MonoBehaviour
         // Spawn Enemies
         int spawnedAmmount = Random.Range((int)roomData.MinMaxEnemyAmount.x, (int)roomData.MinMaxEnemyAmount.y);
         int i = 0;
-        do
+        while(spawnedAmmount > 0)
         {
             int enemyType = Random.Range(0, EnemyTypes.Count);
             Debug.Log(enemyType);
@@ -50,7 +50,7 @@ public class RoomManager : MonoBehaviour
             {
                 i = 0;
             }
-        } while (spawnedAmmount > 0);
+        };
 
         for (int item = 0; item < roomData.ItemSpawns.Count; item++)
         {
@@ -86,5 +86,9 @@ public class RoomManager : MonoBehaviour
             }
         }
         NextRoom();
+    }
+    public Item GetItem()
+    {
+        return ListOfItems[Random.Range(0, ListOfItems.Count)];
     }
 }

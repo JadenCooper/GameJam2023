@@ -26,13 +26,13 @@ public class PlayerInput : MonoBehaviour
     {
         attack.action.performed += PerformAttack;
         //swapWeapon.action.performed += PreformWeaponSwap;
-        //reload.action.performed += PreformReload;
+        reload.action.performed += PreformReload;
     }
     private void OnDisable()
     {
         attack.action.performed -= PerformAttack;
         //swapWeapon.action.performed -= PreformWeaponSwap;
-        //reload.action.performed -= PreformReload;
+        reload.action.performed -= PreformReload;
     }
 
     private void PerformAttack(InputAction.CallbackContext obj)
@@ -46,5 +46,6 @@ public class PlayerInput : MonoBehaviour
     private void PreformReload(InputAction.CallbackContext obj)
     {
         OnReload?.Invoke();
+        Debug.Log("Reload");
     }
 }

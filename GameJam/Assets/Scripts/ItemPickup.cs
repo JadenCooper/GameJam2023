@@ -24,5 +24,4 @@ public class ItemPickup : Interactable
         Debug.Log(item.name);
         Destroy(gameObject);
     }
-    
 }
