@@ -71,7 +71,6 @@ public class CharacterStats : MonoBehaviour
         damage = Mathf.Clamp(damage, 1, int.MaxValue);
         currentHealth -= damage;
         ChangeHealth?.Invoke(currentHealth);
-        Debug.Log(transform.name + " takes " + damage + " damage");
 
         if (currentHealth <= 0)
         {
@@ -81,7 +80,6 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log(transform.name + " has died");
         Destroy(gameObject);
     }
 }

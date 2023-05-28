@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public List<Stairs> ListOfStairs = new List<Stairs>();
     public List<GameObject> ListOfAllRooms = new List<GameObject>();
-    private GameObject BossRoom;
     private List<GameObject> ListOfChosenRooms = new List<GameObject>();
-    private List<GameObject> ListOfEnemies = new List<GameObject>();
+    public List<GameObject> ListOfEnemies = new List<GameObject>();
+    public List<GameObject> EnemyTypes = new List<GameObject>();
     public GameObject CurrentRoom;
     private int currentRoomIndex = 0;
     private GameObject player;
@@ -19,44 +18,41 @@ public class RoomManager : MonoBehaviour
             room.SetActive(false);
         }
         ListOfAllRooms[0].SetActive(true);
-        //player = GameObject.FindWithTag("Player");
-        //StartRoom(CurrentRoom.GetComponent<RoomData>());
+        player = GameObject.FindWithTag("Player");
+        StartRoom(CurrentRoom.GetComponent<RoomData>());
     }
 
     public void NextRoom()
     {
 
-        //ListOfEnemies.Clear();
-        //Destroy(CurrentRoom);
+        ListOfEnemies.Clear();
         ListOfAllRooms[currentRoomIndex].SetActive(false);
         currentRoomIndex++;
         player.transform.position = ListOfAllRooms[currentRoomIndex].GetComponent<RoomData>().PlayerSpawnLocation.transform.position;
-        ListOfAllRooms[currentRoomIndex].SetActive(true);
-        //CurrentRoom = ListOfChosenRooms[currentRoomIndex];
-        //Instantiate(CurrentRoom);
-        //StartRoom(CurrentRoom.GetComponent<RoomData>());
+        ListOfAllRooms[currentRoomIndex].SetActive(true);;
+        StartRoom(ListOfAllRooms[currentRoomIndex].GetComponent<RoomData>());
     }
 
-    //public void StartRoom(RoomData roomData)
-    //{
-    //    // Spawn Enemies
-    //    int spawnedAmmount = Random.Range((int)roomData.MinMaxEnemyAmount.x, (int)roomData.MinMaxEnemyAmount.y);
-    //    int i = 0;
-    //    Debug.Log(spawnedAmmount);
-    //    do
-    //    {
-    //        int enemyType = Random.Range(0, roomData.EnemyTypes.Count);
-    //        Instantiate(roomData.EnemyTypes[enemyType], roomData.EnemySpawnLocations[i]);
-    //        spawnedAmmount--;
-    //        i++;
-    //        if (i > roomData.EnemySpawnLocations.Count)
-    //        {
-    //            i = 0;
-    //        }
-    //    }while(spawnedAmmount > 0);
+    public void StartRoom(RoomData roomData)
+    {
+        // Spawn Enemies
+        int spawnedAmmount = Random.Range((int)roomData.MinMaxEnemyAmount.x, (int)roomData.MinMaxEnemyAmount.y);
+        int i = 0;
+        do
+        {
+            int enemyType = Random.Range(0, EnemyTypes.Count);
+            GameObject NewEnemy = Instantiate(EnemyTypes[enemyType], roomData.EnemySpawnLocations[i]);
+            ListOfEnemies.Add(NewEnemy);
+            spawnedAmmount--;
+            i++;
+            if (i > roomData.EnemySpawnLocations.Count)
+            {
+                i = 0;
+            }
+        } while (spawnedAmmount > 0);
 
-    //    player.transform.position = roomData.PlayerSpawnLocation.transform.position;
-    //}
+        player.transform.position = roomData.PlayerSpawnLocation.transform.position;
+    }
 
     //public void RandomizeRoom()
     //{
@@ -73,4 +69,16 @@ public class RoomManager : MonoBehaviour
     //    } while (i < roomAmount);
     //    ListOfChosenRooms.Add(BossRoom);
     //}
+
+    public void CheckRoomClear()
+    {
+        for (int i = 0; i < ListOfEnemies.Count; i++)
+        {
+            if(ListOfEnemies[i] != null)
+            {
+                return;
+            }
+        }
+        NextRoom();
+    }
 }

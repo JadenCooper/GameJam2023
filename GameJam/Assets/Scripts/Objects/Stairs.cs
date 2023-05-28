@@ -5,17 +5,17 @@ using UnityEngine;
 public class Stairs : MonoBehaviour
 {
     private RoomManager roomManager;
-    public bool RoomCleared = false;
     void Start()
     {
         roomManager =  GameObject.FindWithTag("Manager").GetComponent<RoomManager>();
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && RoomCleared == true)
+        Debug.Log("Hit");
+        if (collision.gameObject.tag == "Player")
         {
-            roomManager.NextRoom();
+            Debug.Log("Check For Clear");
+            roomManager.CheckRoomClear();
         }
     }
 }

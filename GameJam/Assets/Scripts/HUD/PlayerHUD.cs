@@ -14,7 +14,6 @@ public class PlayerHUD : MonoBehaviour
     public TextMeshProUGUI damage;
     public TextMeshProUGUI speed;
     public TextMeshProUGUI defence;
-    public TextMeshProUGUI weight;
 
     public GameObject playerStats;
 
@@ -58,7 +57,7 @@ public class PlayerHUD : MonoBehaviour
 
     public void DisplayHealth()
     {
-        currentHealthText.text = characterStats.maxHealth.ToString() + " / " + characterStats.currentHealth.ToString();
+        currentHealthText.text = characterStats.currentHealth.ToString() + " / " + characterStats.maxHealth.ToString();
     }
 
     public void DisplayAmmoCount()
@@ -73,7 +72,6 @@ public class PlayerHUD : MonoBehaviour
         damage.text = "Damage: " + characterStats.damage.GetValue().ToString();
         speed.text = "Speed: " + characterStats.speed.GetValue().ToString();
         defence.text = "Defence: " + characterStats.defence.GetValue().ToString();
-        weight.text = "Weight: " + characterStats.weight.GetValue().ToString();
     }
 
     public void HidePlayerStats()

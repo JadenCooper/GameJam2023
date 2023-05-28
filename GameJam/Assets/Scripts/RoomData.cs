@@ -6,7 +6,6 @@ public class RoomData : MonoBehaviour
 {
     public Transform PlayerSpawnLocation;
     public List<Transform> EnemySpawnLocations = new List<Transform>();
-    public List<GameObject> EnemyTypes = new List<GameObject>();
     public Stairs RoomStairs;
     public Vector2 MinMaxEnemyAmount;
 }
