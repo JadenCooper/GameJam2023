@@ -87,4 +87,8 @@ public class RoomManager : MonoBehaviour
         }
         NextRoom();
     }
+    public Item GetItem()
+    {
+        return ListOfItems[Random.Range(0, ListOfItems.Count)];
+    }
 }
