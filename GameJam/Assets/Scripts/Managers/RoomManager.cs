@@ -8,6 +8,7 @@ public class RoomManager : MonoBehaviour
     private List<GameObject> ListOfChosenRooms = new List<GameObject>();
     public List<GameObject> ListOfEnemies = new List<GameObject>();
     public List<GameObject> EnemyTypes = new List<GameObject>();
+    public List<Item> ListOfItems = new List<Item>();
     public GameObject CurrentRoom;
     private int currentRoomIndex = 0;
     private GameObject player;
@@ -24,7 +25,6 @@ public class RoomManager : MonoBehaviour
 
     public void NextRoom()
     {
-
         ListOfEnemies.Clear();
         ListOfAllRooms[currentRoomIndex].SetActive(false);
         currentRoomIndex++;
@@ -51,6 +51,11 @@ public class RoomManager : MonoBehaviour
                 i = 0;
             }
         } while (spawnedAmmount > 0);
+
+        for (int item = 0; item < roomData.ItemSpawns.Count; item++)
+        {
+            roomData.ItemSpawns[item].item = ListOfItems[Random.Range(0, ListOfItems.Count)];
+        }
 
         player.transform.position = roomData.PlayerSpawnLocation.transform.position;
     }

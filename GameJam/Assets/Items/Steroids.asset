@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81ce88b0bf28c542a92aae1f57ca0ec, type: 3}
+  m_Name: Steroids
+  m_EditorClassIdentifier: 
+  name: New Item
+  icon: {fileID: 0}
+  damageModifier: 5
+  speedModifier: -2
+  defenceModifier: 3
+  healthModifier: 2
+  weightModifier: 0
+  magSizeModifier: -2
+  spreadModifier: 0
+  bulletSpeedModifier: -1
+  fireRateModifier: 0.3
+  reloadSpeedModifier: 0.5
+  bulletWeightModifier: 0
+  rangeModifier: 0
