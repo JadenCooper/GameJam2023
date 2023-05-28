@@ -9,7 +9,11 @@ public class ItemPickup : Interactable
 
     public void Start()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = item.icon;
+        if (item.icon != null)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = item.icon;
+        }
+        
     }
     public override void Interact()
     {
