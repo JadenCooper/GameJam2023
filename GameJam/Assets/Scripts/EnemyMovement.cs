@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
                 MoveEnemy(gameObject);
             }
         }
-        else
+        else if (gameObject != null)
         {
             MoveEnemy(gameObject);
         }

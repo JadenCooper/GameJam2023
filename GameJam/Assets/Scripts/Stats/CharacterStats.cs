@@ -76,7 +76,7 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             OnDeath?.Invoke();
-            //Die();
+            Die();
         }
     }
 

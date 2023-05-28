@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81ce88b0bf28c542a92aae1f57ca0ec, type: 3}
   m_Name: SpeedUp
   m_EditorClassIdentifier: 
-  name: SpeedUp
+  name: Speed Up
   icon: {fileID: 21300000, guid: 9ea72647c24be493ba6f15a9cd2a24ae, type: 3}
   damageModifier: 0
   speedModifier: 200
@@ -25,3 +25,6 @@ MonoBehaviour:
   fireRateModifier: 0
   reloadSpeedModifier: 0
   bulletWeightModifier: 0
+  rangeModifier: 0
+  modsNames: []
+  mods: []

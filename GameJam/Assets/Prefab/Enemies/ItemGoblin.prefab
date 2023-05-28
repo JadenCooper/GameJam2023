@@ -194,6 +194,9 @@ MonoBehaviour:
   SetHealth:
     m_PersistentCalls:
       m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &549624711865639633
 MonoBehaviour:
   m_ObjectHideFlags: 0

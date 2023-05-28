@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81ce88b0bf28c542a92aae1f57ca0ec, type: 3}
   m_Name: Steroids
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Steroids
   icon: {fileID: 0}
   damageModifier: 5
   speedModifier: -2
@@ -26,3 +26,5 @@ MonoBehaviour:
   reloadSpeedModifier: 0.5
   bulletWeightModifier: 0
   rangeModifier: 0
+  modsNames: []
+  mods: []
