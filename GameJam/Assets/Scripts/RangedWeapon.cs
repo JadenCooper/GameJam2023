@@ -12,14 +12,16 @@ public class RangedWeapon : MonoBehaviour
     public bool attackBlock;
     public Vector2 direction;
     public RangedStats rangedStats;
+    private CharacterStats playerStats;
     private void Start()
     {
-        currentClip = rangedStats.MaxAmmo;
+        playerStats = gameObject.GetComponentInParent<PlayerStats>();
+        currentClip = (int)playerStats.magSize.GetValue();
     }
 
     public void SetStats(CharacterStats stats)
     {
-        rangedStats.bulletData.damage = stats.damage.GetValue();
+
     }
     public void Attack()
     {
@@ -39,7 +41,7 @@ public class RangedWeapon : MonoBehaviour
         newBullet.transform.position = barrel.position;
         newBullet.transform.rotation = barrel.rotation;
         newBullet.layer = gameObject.layer;
-        newBullet.GetComponent<Bullet>().Initialize(rangedStats.bulletData, direction);
+        newBullet.GetComponent<Bullet>().Initialize(rangedStats.bulletData, playerStats.damage.GetValue(), playerStats.bulletSpeed.GetValue(), playerStats.range.GetValue(), direction);
         currentClip--;
         if (currentClip <= 0)
         {
@@ -49,14 +51,14 @@ public class RangedWeapon : MonoBehaviour
     }
     public IEnumerator Reloading()
     {
-        yield return new WaitForSeconds(rangedStats.ReloadDelay);
+        yield return new WaitForSeconds(playerStats.reloadSpeed.GetValue());
         isReloading = false;
-        currentClip = rangedStats.MaxAmmo;
+        currentClip = (int)playerStats.magSize.GetValue();
     }
 
     public  IEnumerator DelayAttack()
     {
-        yield return new WaitForSeconds(rangedStats.AttackDelay);
+        yield return new WaitForSeconds(playerStats.fireRate.GetValue());
         attackBlock = false;
     }
     public void Reload()

@@ -469,28 +469,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
   damage:
     baseValue: 10
   speed:
     baseValue: 50
   defence:
     baseValue: 0
-  health:
-    baseValue: 0
   weight:
     baseValue: 0
   magSize:
-    baseValue: 0
+    baseValue: 5
   spread:
     baseValue: 0
   bulletSpeed:
-    baseValue: 0
+    baseValue: 20
   fireRate:
-    baseValue: 0
+    baseValue: 0.2
   reloadSpeed:
-    baseValue: 0
+    baseValue: 2
   bulletWeight:
     baseValue: 0
+  range:
+    baseValue: 10
   ChangeHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -510,4 +511,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 6354257591413341665}
