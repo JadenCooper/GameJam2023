@@ -35,7 +35,6 @@ class Zombie : EnemyMovement
     IEnumerator HitPlayer(GameObject hitTarget)
     {
         speed = 0.0f;
-        Debug.Log(hitTarget.transform.name + " was hit by " + gameObject.transform.name);
         // hitTarget.GetComponent<CharacterStats>().takeDamage(gameObject.GetComponent<CharacterStats>().damage);
         KnockBack(hitTarget);
         yield return new WaitForSeconds(attackDelay);
