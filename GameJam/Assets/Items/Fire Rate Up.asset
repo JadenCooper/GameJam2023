@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81ce88b0bf28c542a92aae1f57ca0ec, type: 3}
   m_Name: Fire Rate Up
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Fire Rate Up
   icon: {fileID: 0}
   damageModifier: 0
   speedModifier: 0
@@ -26,3 +26,5 @@ MonoBehaviour:
   reloadSpeedModifier: -1
   bulletWeightModifier: 0
   rangeModifier: 0
+  modsNames: []
+  mods: []
