@@ -20,7 +20,7 @@ public class DeathScene : MonoBehaviour
     {
         if(gameObject.activeInHierarchy)
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         }
     }
 

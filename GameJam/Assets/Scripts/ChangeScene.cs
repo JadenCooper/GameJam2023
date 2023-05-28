@@ -7,10 +7,11 @@ public class ChangeScene : MonoBehaviour
 {
     public void WinGame()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
     public void ReturnToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -21,6 +22,7 @@ public class ChangeScene : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("GameScene");
     }
 }

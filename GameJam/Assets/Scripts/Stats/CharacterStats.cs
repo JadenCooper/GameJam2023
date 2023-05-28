@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -76,7 +75,10 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             OnDeath?.Invoke();
-            Die();
+            if (gameObject.tag != "Player")
+            {
+                Die();
+            }
         }
     }
 

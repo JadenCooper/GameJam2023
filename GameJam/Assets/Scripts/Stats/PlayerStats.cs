@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Progress;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : CharacterStats
 {
-
+    public GameObject deathscreen;
+    public GameObject grid;
     public void ItemChanged (Item newItem)
     {
         if (newItem != null)
@@ -35,5 +36,20 @@ public class PlayerStats : CharacterStats
         //    damage.RemoveModifier(oldItem.damageModifier);
         //    speed.RemoveModifier(oldItem.speedModifier);
         //}
+    }
+
+    public void TakeDamage(float damage)
+    {
+
+        damage = damage - defence.GetValue();
+        damage = Mathf.Clamp(damage, 1, int.MaxValue);
+        currentHealth -= damage;
+        ChangeHealth?.Invoke(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Camera.main.transform.parent = grid.transform;
+            deathscreen.SetActive(true);
+        }
     }
 }
