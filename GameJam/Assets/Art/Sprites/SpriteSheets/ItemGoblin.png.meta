@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 724e9255335388d4baccfd456ac28d4d
+guid: 9d4323b1681ea2a409cb6f7361707b75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,17 +101,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: creature-sheet (1)_0
+      name: ItemGoblin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 240
-        height: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cbf4353ee7a9864d9cd2b66c2a71dea
-      internalID: 1743228810
+      spriteID: 583e98a67ed05e442afd1fbcad6a324f
+      internalID: -1173255034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature-sheet (1)_1
+      name: ItemGoblin_1
       rect:
         serializedVersion: 2
-        x: 240
+        x: 24
         y: 0
-        width: 240
-        height: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9607fe0d7daf64946898900dbccc080f
-      internalID: 1341310759
+      spriteID: c7d6416437f3a1045a73f0654f1aa0da
+      internalID: 847793130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature-sheet (1)_2
+      name: ItemGoblin_2
       rect:
         serializedVersion: 2
-        x: 480
+        x: 48
         y: 0
-        width: 240
-        height: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 801c32d234862ca498fc6ace305b8947
-      internalID: -673259539
+      spriteID: db05ab2061d517e49860d645509d761b
+      internalID: 1403709255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature-sheet (1)_3
+      name: ItemGoblin_3
       rect:
         serializedVersion: 2
-        x: 720
+        x: 72
         y: 0
-        width: 240
-        height: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef588c95bd1c31d41aed49647e398ec7
-      internalID: 1861910079
+      spriteID: d51038c59bfddf147a3048503cfefe5a
+      internalID: 1971449016
       vertices: []
       indices: 
       edges: []
@@ -199,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      creature-sheet (1)_0: 1743228810
-      creature-sheet (1)_1: 1341310759
-      creature-sheet (1)_2: -673259539
-      creature-sheet (1)_3: 1861910079
+      ItemGoblin_0: -1173255034
+      ItemGoblin_1: 847793130
+      ItemGoblin_2: 1403709255
+      ItemGoblin_3: 1971449016
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
