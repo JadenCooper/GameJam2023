@@ -33,8 +33,10 @@ public class Boss1 : EnemyMovement
     private void Update()
     {
         base.Update();
-        if(!coroutineIsRunning)
+        if (!coroutineIsRunning)
+        {
             StartCoroutine(HandleSpawnEnemies());
+        }
     }
 
     public void OnCollisionStay2D(Collision2D collision)

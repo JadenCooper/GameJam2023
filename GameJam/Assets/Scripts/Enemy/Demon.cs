@@ -88,7 +88,7 @@ public class Demon : EnemyMovement
         newBullet.Speed = 10f;
         newBullet.MaxDistance = 10f;
         newBullet.damage = characterStats.damage.GetValue();
-        newFireBall.GetComponent<Bullet>().Initialize(newBullet, Firedirection);
+        newFireBall.GetComponent<Bullet>().Initialize(newBullet, characterStats.damage.GetValue(), characterStats.bulletSpeed.GetValue(), characterStats.range.GetValue(), newBullet.Direction);
         StartCoroutine(ShootLocker());
     }
 
