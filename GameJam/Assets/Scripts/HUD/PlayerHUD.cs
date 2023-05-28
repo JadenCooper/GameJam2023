@@ -14,6 +14,7 @@ public class PlayerHUD : MonoBehaviour
     public TextMeshProUGUI damage;
     public TextMeshProUGUI speed;
     public TextMeshProUGUI defence;
+    public TextMeshProUGUI firerate;
 
     public GameObject playerStats;
 
@@ -72,6 +73,7 @@ public class PlayerHUD : MonoBehaviour
         damage.text = "Damage: " + characterStats.damage.GetValue().ToString();
         speed.text = "Speed: " + characterStats.speed.GetValue().ToString();
         defence.text = "Defence: " + characterStats.defence.GetValue().ToString();
+        firerate.text = "Shoot Delay: " + characterStats.fireRate.GetValue().ToString();
     }
 
     public void HidePlayerStats()
