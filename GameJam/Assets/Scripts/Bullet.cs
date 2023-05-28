@@ -11,16 +11,13 @@ public class Bullet : MonoBehaviour
     public float damage;
     //public float Speed;
     public float MaxDistance;
-
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
     }
-    public void Initialize(BulletData newBulletData, float newDamage, float Speed, float newMaxDistance, Vector2 direction)
+    public void Initialize(float newDamage, float Speed, float newMaxDistance, Vector2 direction)
     {
         bulletData.Direction = direction;
-        bulletData = newBulletData;
         startPostion = transform.position;
         rb2d.velocity = bulletData.Direction * Speed;
         damage = newDamage;

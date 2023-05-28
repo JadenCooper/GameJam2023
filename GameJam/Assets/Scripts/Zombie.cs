@@ -4,15 +4,15 @@ using UnityEngine;
 
 class Zombie : EnemyMovement
 {
-    private GameObject zombie;
-
     public float attackDelay = 10.0f;
     public bool isAttacking = false;
-
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        audioSource = GetComponent<AudioSource>();
+        StartCoroutine(MoanTimer(Random.Range(3, 15)));
     }
 
     // Update is called once per frame
@@ -40,5 +40,11 @@ class Zombie : EnemyMovement
         yield return new WaitForSeconds(attackDelay);
         speed = 1.0f;
         isAttacking = false;
+    }
+
+    IEnumerator MoanTimer(float Timer)
+    {
+        yield return new WaitForSeconds(Timer);
+        audioSource.Play();
     }
 }

@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     public void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        characterStats = gameObject.GetComponent<CharacterStats>();
         player = GameObject.FindWithTag("Player");
         canSeePlayer = false;
     }
@@ -44,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
         CheckSide(enemy);
     }
 
-    private void CheckSide(GameObject enemy)
+    public void CheckSide(GameObject enemy)
     {
         Vector2 movementVector = (player.transform.position - enemy.transform.position).normalized;
         if (movementVector.x < 0)
