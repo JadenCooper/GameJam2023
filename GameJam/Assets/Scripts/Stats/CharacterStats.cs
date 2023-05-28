@@ -24,6 +24,7 @@ public class CharacterStats : MonoBehaviour
     public Stat range;
 
     public UnityEvent<float> ChangeHealth, SetHealth;
+    public UnityEvent OnDeath;
 
     private void Awake()
     {
@@ -74,7 +75,8 @@ public class CharacterStats : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            OnDeath?.Invoke();
+            //Die();
         }
     }
 
