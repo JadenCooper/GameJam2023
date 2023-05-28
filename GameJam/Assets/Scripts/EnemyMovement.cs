@@ -16,7 +16,6 @@ public class EnemyMovement : MonoBehaviour
     public void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        characterStats = gameObject.GetComponent<CharacterStats>();
         player = GameObject.FindWithTag("Player");
         canSeePlayer = false;
     }
@@ -40,12 +39,12 @@ public class EnemyMovement : MonoBehaviour
     public void MoveEnemy(GameObject enemy)
     {
         float step = speed * Time.deltaTime; // calculate distance to move
-        // enemy.transform.LookAt(player.transform);
+        // enemy.transform.wdLookAt(player.transform);
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, step);
         CheckSide(enemy);
     }
 
-    public void CheckSide(GameObject enemy)
+    private void CheckSide(GameObject enemy)
     {
         Vector2 movementVector = (player.transform.position - enemy.transform.position).normalized;
         if (movementVector.x < 0)

@@ -1399,7 +1399,10 @@ MonoBehaviour:
   - {fileID: 1066298820}
   - {fileID: 811925330}
   - {fileID: 180113660}
-  ListOfEnemies: []
+  ListOfEnemies:
+  - {fileID: 3384936034540007640, guid: bd369907864ab5c498a2edf3c3fb1a62, type: 3}
+  - {fileID: 549624711865639636, guid: 9a3d6f98bffdfec40b8f14d8f7aa530d, type: 3}
+  - {fileID: 3435715496364184206, guid: bed5b01641632104999ff332155b0bc5, type: 3}
   EnemyTypes:
   - {fileID: 3435715496364184206, guid: bed5b01641632104999ff332155b0bc5, type: 3}
   CurrentRoom: {fileID: 1612634103}

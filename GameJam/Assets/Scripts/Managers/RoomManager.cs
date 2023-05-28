@@ -41,6 +41,7 @@ public class RoomManager : MonoBehaviour
         do
         {
             int enemyType = Random.Range(0, EnemyTypes.Count);
+            Debug.Log(enemyType);
             GameObject NewEnemy = Instantiate(EnemyTypes[enemyType], roomData.EnemySpawnLocations[i]);
             ListOfEnemies.Add(NewEnemy);
             spawnedAmmount--;
