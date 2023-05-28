@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpeed: 0
-  Acceleration: 15
+  Acceleration: 45
   MaxSpeed: 50
   isMoving: 0
 --- !u!50 &6354257591413341657
@@ -473,7 +473,7 @@ MonoBehaviour:
   damage:
     baseValue: 10
   speed:
-    baseValue: 50
+    baseValue: 250
   defence:
     baseValue: 0
   weight:
