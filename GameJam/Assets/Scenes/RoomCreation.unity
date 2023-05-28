@@ -381,6 +381,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8657879900107564547, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
+      propertyPath: range.baseValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657879900107564547, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
+      propertyPath: speed.baseValue
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657879900107564547, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
+      propertyPath: magSize.baseValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657879900107564547, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
+      propertyPath: fireRate.baseValue
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657879900107564547, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
+      propertyPath: bulletSpeed.baseValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657879900107564547, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
+      propertyPath: reloadSpeed.baseValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8657879900107564550, guid: 4345eea8e71311746a93d214a6e8dda2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -502,6 +526,18 @@ PrefabInstance:
     - target: {fileID: 3384936034540007640, guid: bd369907864ab5c498a2edf3c3fb1a62, type: 3}
       propertyPath: m_Name
       value: Demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384936034540007644, guid: bd369907864ab5c498a2edf3c3fb1a62, type: 3}
+      propertyPath: range.baseValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384936034540007644, guid: bd369907864ab5c498a2edf3c3fb1a62, type: 3}
+      propertyPath: fireRate.baseValue
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384936034540007644, guid: bd369907864ab5c498a2edf3c3fb1a62, type: 3}
+      propertyPath: bulletSpeed.baseValue
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3384936034540007645, guid: bd369907864ab5c498a2edf3c3fb1a62, type: 3}
       propertyPath: m_RootOrder
